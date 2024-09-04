@@ -25,24 +25,26 @@ class _SplashState extends State<Splash> {
       body: Container(
           height: double.infinity,
           width: double.infinity,
-          child:Stack(
+        color: Colors.transparent,
+        child: SingleChildScrollView(
+          child: Column(
             children: [
-              Image.asset("assets/splash.jpg",fit: BoxFit.cover,),
-              Align(
-                alignment: Alignment.bottomCenter,
-                child: Container(
-                  height: 200,
-                  color: Colors.transparent,
-                  child: Column(
-                    children: [
-                      Text("Discover",style: TextStyle(color: Colors.white,fontSize: 30,letterSpacing: 5),),
-                      Text("The Universe",style: TextStyle(color: Colors.white,fontSize: 30,letterSpacing: 5),),
-                    ],
-                  ),
-                ),
-              )
+              Stack(
+                children: [
+                  Image.asset("assets/splash.jpg",fit: BoxFit.fill,),
+                  Transform.translate(offset: Offset(20, 650),
+                  child: Text("Discover",style: TextStyle(color: Colors.white,fontSize: 40),)),
+                  Transform.translate(offset: Offset(20, 700),
+                      child: Text("The",style: TextStyle(color: Colors.white,fontSize: 40),)),
+                  Transform.translate(offset: Offset(100, 710),
+                      child: Text("Universe",style: TextStyle(color: Color(0xff1686b4),fontSize: 30,fontWeight: FontWeight.bold,fontFamily: "f1"),)),
+                ],
+              ),
             ],
-          )),
+          ),
+        ),
+      )
+
     );
   }
 }
